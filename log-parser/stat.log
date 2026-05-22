@@ -1,114 +1,114 @@
-[INFO] ==== СИСТЕМА ЗАПУЩЕНА ====
-[INFO] Версия приложения: 2.1.4
-[INFO] Операционная система: Windows 10 Pro
-[INFO] Процессор: Intel Core i7-10750H
-[INFO] Оперативная память: 16384 MB
-[DEBUG] Загрузка конфигурационного файла: config.json
-[DEBUG] Парсинг настроек подключения к БД
-[INFO] Конфигурация успешно загружена
-[INFO] Инициализация модулей...
-[INFO] Модуль аутентификации загружен
-[INFO] Модуль базы данных загружен
-[INFO] Модуль кэширования загружен
-[DEBUG] Проверка лицензии...
-[INFO] Лицензия действительна до 2025-12-31
-[WARNING] Лицензия истекает через 30 дней
-[INFO] Установка соединения с базой данных...
-[INFO] Подключение к PostgreSQL на localhost:5432
-[DEBUG] Попытка подключения #1
-[ERROR] Не удалось подключиться к базе данных: timeout после 5000ms
-[WARNING] Переподключение через 2 секунды...
-[INFO] Повторная попытка подключения #2
-[INFO] Соединение с БД установлено успешно
-[DEBUG] Пул соединений создан: 10 активных соединений
-[INFO] Загрузка пользовательских данных...
-Всем привет!
+[INFO] ==== SYSTEM STARTED ====
+[INFO] Application version: 2.1.4
+[INFO] Operating system: Windows 10 Pro
+[INFO] Processor: Intel Core i7-10750H
+[INFO] RAM: 16384 MB
+[DEBUG] Loading configuration file: config.json
+[DEBUG] Parsing database connection settings
+[INFO] Configuration loaded successfully
+[INFO] Initializing modules...
+[INFO] Authentication module loaded
+[INFO] Database module loaded
+[INFO] Caching module loaded
+[DEBUG] Checking license...
+[INFO] License valid until 2025-12-31
+[WARNING] License expires in 30 days
+[INFO] Establishing database connection...
+[INFO] Connecting to PostgreSQL on localhost:5432
+[DEBUG] Connection attempt #1
+[ERROR] Failed to connect to database: timeout after 5000ms
+[WARNING] Reconnecting in 2 seconds...
+[INFO] Reconnection attempt #2
+[INFO] Database connection established successfully
+[DEBUG] Connection pool created: 10 active connections
+[INFO] Loading user data...
+Hello everyone!
 
-[ERROR] Ошибка при загрузке профиля пользователя: таблица 'users' не найдена
-[WARNING] Используется резервная таблица 'user_profiles'
-[INFO] Данные пользователя загружены: 1542 записи
-[DEBUG] Индексация данных завершена за 125ms
-[INFO] Веб-сервер запущен на порту 8080
-[INFO] Обработчик запросов инициализирован
-[DEBUG] SSL сертификат загружен: cert.pem
-[INFO] Сервер готов к приему запросов
-[INFO] Получен запрос GET /api/users
-[INFO] Обработка запроса: /api/users
-[DEBUG] SQL запрос: SELECT * FROM users WHERE active=true
-[INFO] Возвращено 342 пользователя
-[INFO] Получен запрос POST /api/login
-[WARNING] Неудачная попытка входа: user 'admin' с IP 192.168.1.45
-[WARNING] Неудачная попытка входа: user 'root' с IP 10.0.0.67
-[ERROR] Превышен лимит попыток входа для IP 192.168.1.45
-[INFO] Заблокирован IP 192.168.1.45 на 15 минут
-[INFO] Получен запрос GET /api/products
-[ERROR] Ошибка базы данных: duplicate key value violates unique constraint
-[ERROR] Подробности: Key (id)=(1001) already exists
-[WARNING] Транзакция откачена
-[INFO] Выполнен повтор запроса через 1 секунду
-[INFO] Запрос выполнен успешно: 89 продуктов
-[DEBUG] Время выполнения запроса: 234ms
-[INFO] Получен запрос DELETE /api/session/12345
-[INFO] Сессия пользователя завершена
-[WARNING] Высокая нагрузка на CPU: 87%
-[WARNING] Использование памяти: 76% (12456 MB)
-[DEBUG] Запуск сборщика мусора...
-[INFO] Освобождено 234 MB памяти
-[INFO] Получен запрос GET /api/statistics
-[DEBUG] Вычисление агрегированных данных...
-[INFO] Статистика сформирована за 567ms
-[ERROR] Сетевая ошибка: connection reset by peer
-[WARNING] Клиент 10.0.0.89 разорвал соединение
-[INFO] Закрыто соединение #1234
-[INFO] Получен запрос PUT /api/settings
-[DEBUG] Проверка прав доступа...
-[INFO] Пользователь 'john_doe' изменяет настройки
-[INFO] Настройки сохранены в БД
-[DEBUG] Инвалидация кэша настроек...
-[INFO] Кэш обновлен
-[ERROR] Критическая ошибка: необработанное исключение в потоке #23
-[ERROR] Стек вызовов: processRequest() -> handleData() -> parseJSON()
-[INFO] Аварийное завершение потока, данные сохранены
-[WARNING] Обнаружено утечка памяти: +5 MB не освобождено
-[INFO] Запуск фоновой задачи: резервное копирование
-[INFO] Создание дампа базы данных...
-Я надеюсь, я молодец!
-[INFO] Резервная копия создана: backup_20251220.sql (245 MB)
-[INFO] Резервное копирование завершено за 45 секунд
-[DEBUG] Расписание следующего бэкапа: через 24 часа
-[INFO] Получен запрос GET /api/search?q=error
-[DEBUG] Поиск по индексу...
-[INFO] Найдено 523 результата
-[WARNING] Результатов слишком много, показаны первые 100
-[INFO] Получен запрос POST /api/upload
-[INFO] Загрузка файла: report.pdf (2.3 MB)
-[ERROR] Ошибка записи файла: недостаточно места на диске
-[WARNING] Свободно всего 45 MB, требуется 50 MB
-[INFO] Запрос отклонен из-за нехватки места
-[INFO] Получен запрос GET /api/health
-[INFO] Статус сервера: OK
-[DEBUG] Пинг БД: 5ms
-[DEBUG] Пинг кэша: 2ms
-[INFO] Время ответа: 12ms
-[WARNING] Медленный запрос: /api/reports/large (время выполнения: 5123ms)
-[WARNING] Рекомендуется оптимизировать SQL запрос
-[INFO] Начало планового обслуживания
-[INFO] Остановка сервера...
-[INFO] Закрытие всех соединений с БД
-[INFO] Ожидание завершения активных запросов...
-[INFO] Запросов в процессе: 3
-[INFO] Принудительное завершение через 30 секунд
-[INFO] Все соединения закрыты
-[INFO] Сервер остановлен
-Неизвестный пользователь NULL
-[DEBUG] Выгрузка модулей...
-[INFO] Модуль аутентификации выгружен
-[INFO] Модуль базы данных выгружен
-[INFO] Модуль кэширования выгружен
-[INFO] ==== СИСТЕМА ОСТАНОВЛЕНА ====
-[INFO] Время работы: 23 часа 45 минут 12 секунд
-[INFO] Обработано запросов: 15234
-[ERROR] Ошибок: 127
-[WARNING] Предупреждений: 345
-[DEBUG] Отладочных сообщений: 2341
-[INFO] Завершение работы программы
+[ERROR] Error loading user profile: table 'users' not found
+[WARNING] Using backup table 'user_profiles'
+[INFO] User data loaded: 1542 records
+[DEBUG] Data indexing completed in 125ms
+[INFO] Web server started on port 8080
+[INFO] Request handler initialized
+[DEBUG] SSL certificate loaded: cert.pem
+[INFO] Server ready to accept requests
+[INFO] Received GET request /api/users
+[INFO] Processing request: /api/users
+[DEBUG] SQL query: SELECT * FROM users WHERE active=true
+[INFO] Returned 342 users
+[INFO] Received POST request /api/login
+[WARNING] Failed login attempt: user 'admin' from IP 192.168.1.45
+[WARNING] Failed login attempt: user 'root' from IP 10.0.0.67
+[ERROR] Login attempt limit exceeded for IP 192.168.1.45
+[INFO] IP 192.168.1.45 blocked for 15 minutes
+[INFO] Received GET request /api/products
+[ERROR] Database error: duplicate key value violates unique constraint
+[ERROR] Details: Key (id)=(1001) already exists
+[WARNING] Transaction rolled back
+[INFO] Query retried after 1 second
+[INFO] Query executed successfully: 89 products
+[DEBUG] Query execution time: 234ms
+[INFO] Received DELETE request /api/session/12345
+[INFO] User session terminated
+[WARNING] High CPU load: 87%
+[WARNING] Memory usage: 76% (12456 MB)
+[DEBUG] Running garbage collector...
+[INFO] Freed 234 MB of memory
+[INFO] Received GET request /api/statistics
+[DEBUG] Computing aggregated data...
+[INFO] Statistics generated in 567ms
+[ERROR] Network error: connection reset by peer
+[WARNING] Client 10.0.0.89 disconnected
+[INFO] Connection #1234 closed
+[INFO] Received PUT request /api/settings
+[DEBUG] Checking access rights...
+[INFO] User 'john_doe' is changing settings
+[INFO] Settings saved to database
+[DEBUG] Invalidating settings cache...
+[INFO] Cache updated
+[ERROR] Critical error: unhandled exception in thread #23
+[ERROR] Call stack: processRequest() -> handleData() -> parseJSON()
+[INFO] Thread terminated abnormally, data saved
+[WARNING] Memory leak detected: +5 MB not freed
+[INFO] Starting background task: backup
+[INFO] Creating database dump...
+I hope I did well!
+[INFO] Backup created: backup_20251220.sql (245 MB)
+[INFO] Backup completed in 45 seconds
+[DEBUG] Next backup scheduled: in 24 hours
+[INFO] Received GET request /api/search?q=error
+[DEBUG] Searching index...
+[INFO] Found 523 results
+[WARNING] Too many results, showing first 100
+[INFO] Received POST request /api/upload
+[INFO] Uploading file: report.pdf (2.3 MB)
+[ERROR] File write error: insufficient disk space
+[WARNING] Only 45 MB free, 50 MB required
+[INFO] Request rejected due to insufficient space
+[INFO] Received GET request /api/health
+[INFO] Server status: OK
+[DEBUG] DB ping: 5ms
+[DEBUG] Cache ping: 2ms
+[INFO] Response time: 12ms
+[WARNING] Slow request: /api/reports/large (execution time: 5123ms)
+[WARNING] SQL query optimization recommended
+[INFO] Starting scheduled maintenance
+[INFO] Stopping server...
+[INFO] Closing all database connections
+[INFO] Waiting for active requests to complete...
+[INFO] Requests in progress: 3
+[INFO] Forced termination in 30 seconds
+[INFO] All connections closed
+[INFO] Server stopped
+Unknown user NULL
+[DEBUG] Unloading modules...
+[INFO] Authentication module unloaded
+[INFO] Database module unloaded
+[INFO] Caching module unloaded
+[INFO] ==== SYSTEM STOPPED ====
+[INFO] Uptime: 23 hours 45 minutes 12 seconds
+[INFO] Requests processed: 15234
+[ERROR] Errors: 127
+[WARNING] Warnings: 345
+[DEBUG] Debug messages: 2341
+[INFO] Program shutdown
