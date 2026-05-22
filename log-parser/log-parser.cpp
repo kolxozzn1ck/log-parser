@@ -34,8 +34,8 @@ void updStats(LogStats* s, const char* t) {
 
 void printStats(LogStats* s) {
 	int total = s->inf + s->warn + s->err + s->dbg + s->unk;
-	printf("\n=== СТАТИСТИКА ===\n");
-	printf("INFO(ИНФО): %d\nWARNING(ВНИМАНИЕ): %d\nERROR(ОШИБКА): %d\nDEBUG(ОТЛАДКА): %d\nUNKNOWN(НЕИЗВЕСТНО): %d\nВСЕГО: %d\n",
+	printf("\n=== РЎРўРђРўРРЎРўРРљРђ ===\n");
+	printf("INFO(РРќР¤Рћ): %d\nWARNING(Р’РќРРњРђРќРР•): %d\nERROR(РћРЁРР‘РљРђ): %d\nDEBUG(РћРўР›РђР”РљРђ): %d\nUNKNOWN(РќР•РР—Р’Р•РЎРўРќРћ): %d\nР’РЎР•Р“Рћ: %d\n",
 		s->inf, s->warn, s->err, s->dbg, s->unk, total);
 }
 
@@ -64,14 +64,14 @@ int filterText(const char* line, const char* search) {
 }
 
 void help() {
-	printf("\n=== LOG PARSER (Анализатор логов) ===\n\n");
-	printf("Использование:\n");
-	printf("  log_parser.exe - запуск с файлом test.log\n");
-	printf("  log_parser.exe [файл] - анализ указанного файла\n");
-	printf("  log_parser.exe [файл] [тип] - фильтр по типу\n");
-	printf("  log_parser.exe [файл] [тип] [текст] - фильтр по типу и тексту\n\n");
-	printf("Типы: all, error, warning, info, debug\n");
-	printf("Примеры:\n");
+	printf("\n=== LOG PARSER (РђРЅР°Р»РёР·Р°С‚РѕСЂ Р»РѕРіРѕРІ) ===\n\n");
+	printf("РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ:\n");
+	printf("  log_parser.exe - Р·Р°РїСѓСЃРє СЃ С„Р°Р№Р»РѕРј test.log\n");
+	printf("  log_parser.exe [С„Р°Р№Р»] - Р°РЅР°Р»РёР· СѓРєР°Р·Р°РЅРЅРѕРіРѕ С„Р°Р№Р»Р°\n");
+	printf("  log_parser.exe [С„Р°Р№Р»] [С‚РёРї] - С„РёР»СЊС‚СЂ РїРѕ С‚РёРїСѓ\n");
+	printf("  log_parser.exe [С„Р°Р№Р»] [С‚РёРї] [С‚РµРєСЃС‚] - С„РёР»СЊС‚СЂ РїРѕ С‚РёРїСѓ Рё С‚РµРєСЃС‚Сѓ\n\n");
+	printf("РўРёРїС‹: all, error, warning, info, debug\n");
+	printf("РџСЂРёРјРµСЂС‹:\n");
 	printf("  log_parser.exe app.log error\n");
 	printf("  log_parser.exe app.log error timeout\n");
 	printf("  log_parser.exe app.log all database\n");
@@ -96,13 +96,13 @@ int main(int argc, char** argv) {
 	if (argc > 3) ftext = argv[3];
 
 	printf("\n=== LOG PARSER ===\n");
-	printf("Файл: %s\nФильтр: %s\n", fname, ftype);
-	if (ftext != 0) printf("Поиск: %s\n", ftext);
+	printf("Р¤Р°Р№Р»: %s\nР¤РёР»СЊС‚СЂ: %s\n", fname, ftype);
+	if (ftext != 0) printf("РџРѕРёСЃРє: %s\n", ftext);
 
 	FILE* f = fopen(fname, "r");
 	if (f == 0) {
-		printf("\nОШИБКА: Файл '%s' не найден!\n", fname);
-		printf("Проверьте, находится ли %s в папке дериктории!\n", fname);
+		printf("\nРћРЁРР‘РљРђ: Р¤Р°Р№Р» '%s' РЅРµ РЅР°Р№РґРµРЅ!\n", fname);
+		printf("РџСЂРѕРІРµСЂСЊС‚Рµ, РЅР°С…РѕРґРёС‚СЃСЏ Р»Рё %s РІ РїР°РїРєРµ РґРµСЂРёРєС‚РѕСЂРёРё!\n", fname);
 		return 1;
 	}
 
@@ -110,7 +110,7 @@ int main(int argc, char** argv) {
 	char buf[MAX];
 	int num = 0, shown = 0;
 
-	printf("\n--- РЕЗУЛЬТАТЫ ---\n");
+	printf("\n--- Р Р•Р—РЈР›Р¬РўРђРўР« ---\n");
 
 	while (fgets(buf, sizeof(buf), f)) {
 		int l = strlen(buf);
@@ -128,9 +128,9 @@ int main(int argc, char** argv) {
 
 	fclose(f);
 
-	if (shown == 0) printf("(ничего не найдено)\n");
+	if (shown == 0) printf("(РЅРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ)\n");
 
-	printf("\nВсего строк: %d, показано: %d\n", num, shown);
+	printf("\nР’СЃРµРіРѕ СЃС‚СЂРѕРє: %d, РїРѕРєР°Р·Р°РЅРѕ: %d\n", num, shown);
 	printStats(&st);
 
 	return 0;
