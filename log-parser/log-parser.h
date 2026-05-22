@@ -15,4 +15,4 @@ void updStats(Logstats* s, const char* t);
 boid printStats(Logstats* s);
 int filterType(const char* type, const char* filter);
 int filterText(const char* line, const char* search);
-void help() 
+void help();
