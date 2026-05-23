@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <locale.h>
 #define MAX 1024
 
 const char* getType(const char* line) {
@@ -79,13 +78,12 @@ void help() {
     printf("  log_parser.exe [FAIL] [TIP] [TEKST] - FILTR PO TIPU I TEKSTU\n\n");
     printf("TIPY: all, error, warning, info, debug\n");
     printf("PRIMERY:\n");
-    printf("  log_parser.exe app.log error\n");
-    printf("  log_parser.exe app.log error timeout\n");
-    printf("  log_parser.exe app.log all database\n");
+    printf("  log_parser.exe stat.log error\n");
+    printf("  log_parser.exe stat.log error timeout\n");
+    printf("  log_parser.exe stat.log all database\n");
 }
 
 int main(int argc, char** argv) {
-    setlocale(LC_ALL, "Russian");
     char fname[256] = "stat.log";
     const char* ftype = "all";
     const char* ftext = 0;
